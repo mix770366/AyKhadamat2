@@ -19,7 +19,7 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
       - name: Create Android platform files if missing
-        run: flutter create --platforms=android .
+        run: flutter create --platforms=android --project-name=aykhadamat2 .
       - name: Get dependencies
         run: flutter pub get
       - name: Build APK
