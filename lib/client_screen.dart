@@ -4,16 +4,22 @@ class ClientScreen extends StatefulWidget {
   const ClientScreen({Key? key}) : super(key: key);
 
   @override
-  _ClientScreenState createState() => _ClientScreenState();
+  State<ClientScreen> createState() => _ClientScreenState();
 }
 
 class _ClientScreenState extends State<ClientScreen> {
-  final List<String> _orders = ['طلب توصيل طرد - شارع المحافظة', 'طلب خدمة صيانة منزلية'];
+  final List<String> _orders = [
+    'طلب توصيل طرد - شارع المحافظة',
+    'طلب خدمة صيانة منزلية'
+  ];
 
   void _addNewOrder() {
     setState(() {
       _orders.add('طلب جديد رقم ${_orders.length + 1}');
     });
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('تمت إضافة الطلب بنجاح!')),
+    );
   }
 
   @override
@@ -31,7 +37,10 @@ class _ClientScreenState extends State<ClientScreen> {
             child: ListTile(
               leading: const Icon(Icons.shopping_bag, color: Colors.blue),
               title: Text(_orders[index]),
-              subtitle: const StatusBadge(status: 'قيد الانتظار'),
+              subtitle: const Text(
+                'الحالة: قيد الانتظار',
+                style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
+              ),
             ),
           );
         },
@@ -39,22 +48,9 @@ class _ClientScreenState extends State<ClientScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _addNewOrder,
         backgroundColor: Colors.blue,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.white),
         tooltip: 'إضافة طلب جديد',
       ),
-    );
-  }
-}
-
-class StatusBadge extends StatelessWidget {
-  final String status;
-  const StatusBadge({Key? key, required this.status}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'الحالة: $status',
-      style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
     );
   }
 }
