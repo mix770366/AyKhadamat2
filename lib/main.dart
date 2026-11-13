@@ -81,7 +81,7 @@ class RoleSelectorScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 40),
-            // قسم الحقوق والبرمجة باسمك في الشاشة الرئيسية
+            // توقيع الحقوق والبرمجة باسمك الكريم في الشاشة الرئيسية
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
