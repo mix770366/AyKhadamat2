@@ -31,12 +31,18 @@ class AdminScreen extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red, padding: const EdgeInsets.all(14)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                padding: const EdgeInsets.all(14),
+              ),
               icon: const Icon(Icons.settings_suggest, color: Colors.white),
-              label: const Text('إدارة إعدادات النظام والأسعار', style: TextStyle(fontSize: 16, color: Colors.white)),
+              label: const Text(
+                'إدارة إعدادات النظام والأسعار',
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('تم فتح لوحة إعدادات النظام')),
+                  const SnackBar(content: Text('تم فتح لوحة إعدادات النظام بنجاح')),
                 );
               },
             ),
