@@ -1,4 +1,4 @@
-name: Build AyKhadamat APK
+name: Build aykhadamat2 APK
 
 on:
   push:
