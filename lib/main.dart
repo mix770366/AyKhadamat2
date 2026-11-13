@@ -80,6 +80,34 @@ class RoleSelectorScreen extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(height: 40),
+            // قسم الحقوق والبرمجة باسمك في الشاشة الرئيسية
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.blue.shade200),
+              ),
+              child: const Column(
+                children: [
+                  Text(
+                    'تطوير وبرمجة:',
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    'محمد صالح معزب',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
