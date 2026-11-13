@@ -4,7 +4,7 @@ class DriverScreen extends StatefulWidget {
   const DriverScreen({Key? key}) : super(key: key);
 
   @override
-  _DriverScreenState createState() => _DriverScreenState();
+  State<DriverScreen> createState() => _DriverScreenState();
 }
 
 class _DriverScreenState extends State<DriverScreen> {
@@ -15,7 +15,9 @@ class _DriverScreenState extends State<DriverScreen> {
 
   void _acceptOrder(int index) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('تم قبول الطلب: ${_availableOrders[index]['title']} بنجاح!')),
+      SnackBar(
+        content: Text('تم قبول الطلب: ${_availableOrders[index]['title']} بنجاح!'),
+      ),
     );
   }
 
